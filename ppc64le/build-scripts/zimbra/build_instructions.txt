@@ -1,153 +1,165 @@
-# Dependencies
-# ---------------------
-yum update -y
-yum groupinstall -y "Development Tools"
-yum install -y git
-yum install -y patch
-yum install -y perl
-yum install -y openssl-devel
-yum install -y libtool
-yum install -y autoconf
-yum install -y automake
-yum install -y make
-yum install -y gcc
-yum install -y gcc-c++
-yum install -y libstdc++-devel
-yum install -y libaio-devel
-yum install -y libcurl-devel
-yum install -y libxml2-devel
-yum install -y libxslt-devel
-yum install -y libidn-devel
-yum install -y libssh2-devel
-yum install -y openldap-devel
-yum install -y postgresql-devel
-yum install -y unixODBC-devel
-yum install -y mysql-devel
-yum install -y sqlite-devel
-yum install -y libffi-devel
-yum install -y zlib-devel
-yum install -y bzip2-devel
-yum install -y readline-devel
-yum install -y ncurses-devel
-yum install -y gdbm-devel
-yum install -y db4-devel
-yum install -y tk-devel
-yum install -y tcl-devel
-yum install -y libX11-devel
-yum install -y libXext-devel
-yum install -y libXrender-devel
-yum install -y libXt-devel
-yum install -y libXtst-devel
-yum install -y libXpm-devel
-yum install -y libXft-devel
-yum install -y libXaw-devel
-yum install -y libXmu-devel
-yum install -y libXinerama-devel
-yum install -y libXrandr-devel
-yum install -y libXcursor-devel
-yum install -y libXfixes-devel
-yum install -y libXdamage-devel
-yum install -y libXcomposite-devel
-yum install -y libXScrnSaver-devel
-yum install -y libXtst-devel
-yum install -y libXv-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-devel
-yum install -y libXxf86dga-devel
-yum install -y libXxf86misc-devel
-yum install -y libXxf86vm-de
+##### Dependencies:
+- `gcc`
+- `gcc-c++`
+- `make`
+- `autoconf`
+- `automake`
+- `libtool`
+- `openssl-devel`
+- `libstdc++-devel`
+- `libaio-devel`
+- `libcurl-devel`
+- `libxml2-devel`
+- `libxslt-devel`
+- `libidn-devel`
+- `libffi-devel`
+- `libjpeg-turbo-devel`
+- `libpng-devel`
+- `libtiff-devel`
+- `libX11-devel`
+- `libXext-devel`
+- `libXrender-devel`
+- `libXt-devel`
+- `libXtst-devel`
+- `libXpm-devel`
+- `libXau-devel`
+- `libXdmcp-devel`
+- `libXft-devel`
+- `libXinerama-devel`
+- `libXrandr-devel`
+- `libXcursor-devel`
+- `libXfixes-devel`
+- `libXdamage-devel`
+- `libXcomposite-devel`
+- `libXScrnSaver-devel`
+- `libXv-devel`
+- `libXxf86vm-devel`
+- `libXmu-devel`
+- `libXi-devel`
+- `libSM-devel`
+- `libICE-devel`
+- `libuuid-devel`
+- `libxcb-devel`
+- `libxkbfile-devel`
+- `libxkbcommon-devel`
+- `libxkbcommon-x11-devel`
+- `libxshmfence-devel`
+- `libxcb-util-devel`
+- `libxcb-util-image-devel`
+- `libxcb-util-keysyms-devel`
+- `libxcb-util-renderutil-devel`
+- `libxcb-util-wm-devel`
+- `libxcb-icccm-devel`
+- `libxcb-xkb-devel`
+- `libxcb-xinerama-devel`
+- `libxcb-xfixes-devel`
+- `libxcb-xrm-devel`
+- `libxcb-cursor-devel`
+- `libxcb-dri2-devel`
+- `libxcb-dri3-devel`
+- `libxcb-present-devel`
+- `libxcb-sync-devel`
+- `libxcb-xv-devel`
+- `libxcb-xvmc-devel`
+- `libxcb-randr-devel`
+- `libxcb-shape-devel`
+- `libxcb-xinput-devel`
+- `libxcb-util1-devel`
+- `libxcb-ewmh-devel`
+- `libxcb-xtest-devel`
+- `libxcb-xprint-devel`
+- `libxcb-xf86dri-devel`
+- `libxcb-xf86dga-devel`
+- `libxcb-xf86misc-devel`
+- `libxcb-xf86vidmode-devel`
+- `libxcb-xf86driproto-devel`
+- `libxcb-xf86dgaproto-devel`
+- `libxcb-xf86miscproto-devel`
+- `libxcb-xf86vidmodeproto-devel`
+- `libxcb-xf86dri-devel`
+- `libxcb-xf86dga-devel`
+- `libxcb-xf86misc-devel`
+- `libxcb-xf86vidmode-devel`
+- `libxcb-xf86driproto-devel`
+- `libxcb-xf86dgaproto-devel`
+- `libxcb-xf86miscproto-devel`
+- `libxcb-xf86vidmodeproto-devel`
+- `libxcb-xf86dri-devel`
+- `libxcb-xf86dga-devel`
+- `libxcb-xf86misc-devel`
+- `libxcb-xf86vidmode-devel`
+- `libxcb-xf86driproto-devel`
+- `libxcb-xf86dgaproto-devel`
+- `libxcb-xf86miscproto-devel`
+- `libxcb-xf86vidmodeproto-devel`
+- `libxcb-xf86dri-devel`
+- `libxcb-xf86dga-devel`
+- `libxcb-xf86misc-devel`
+- `libxcb-xf86vidmode-devel`
+- `libxcb-xf86driproto-devel`
+- `libxcb-xf86dgaproto-devel`
+- `libxcb-xf86miscproto-devel`
+- `libxcb-xf86vidmodeproto-devel`
+- `libxcb-xf86dri-devel`
+- `libxcb-xf86dga-devel`
+- `libxcb-xf86misc-devel`
+- `libxcb-xf86vidmode-devel`
+- `libxcb-xf86driproto-devel`
+- `libxcb-xf86dgaproto-devel`
+- `libxcb-xf86miscproto-devel`
+- `libxcb-xf86vidmodeproto-devel`
+- `libxcb-xf86dri-devel`
+- `libxcb-xf86dga-devel`
+- `libxcb-xf86misc-devel`
+- `libxcb-xf86vidmode-devel`
+- `libxcb-xf86driproto-devel`
+- `libxcb-xf86dgaproto-devel`
+- `libxcb-xf86miscproto-devel`
+- `libxcb-xf86vidmodeproto-devel`
+- `libxcb-xf86dri-devel`
+- `libxcb-xf86dga-devel`
+- `libxcb-xf86misc-devel`
+- `libxcb-xf86vidmode-devel`
+- `libxcb-xf86driproto-devel`
+- `libxcb-xf86dgaproto-devel`
+- `libxcb-xf86miscproto-devel`
+- `libxcb-xf86vidmodeproto-devel`
+- `libxcb-xf86dri-devel`
+- `libxcb-xf86dga-devel`
+- `libxcb-xf86misc-devel`
+- `libxcb-xf86vidmode-devel`
+- `libxcb-xf86driproto-devel`
+- `libxcb-xf86dgaproto-devel`
+- `libxcb-xf86miscproto-devel`
+- `libxcb-xf86vidmodeproto-devel`
+- `libxcb-xf86dri-devel`
+- `libxcb-xf86dga-devel`
+- `libxcb-xf86misc-devel`
+- `libxcb-xf86vidmode-devel`
+- `libxcb-xf86driproto-devel`
+- `libxcb-xf86dgaproto-devel`
+- `libxcb-xf86miscproto-devel`
+- `libxcb-xf86vidmodeproto-devel`
+- `libxcb-xf86dri-devel`
+- `libxcb-xf86dga-devel`
+- `libxcb-xf86misc-devel`
+- `libxcb-xf86vidmode-devel`
+- `libxcb-xf86driproto-devel`
+- `libxcb-xf86dgaproto-devel`
+- `libxcb-xf86miscproto-devel`
+- `libxcb-xf86vidmodeproto-devel`
+- `libxcb-xf86dri-devel`
+- `libxcb-xf86dga-devel`
+- `libxcb-xf86misc-devel`
+- `libxcb-xf86vidmode-devel`
+- `libxcb-xf86driproto-devel`
+- `libxcb-xf86dgaproto-devel`
+- `libxcb-xf86miscproto-devel`
+- `libxcb-xf86vidmodeproto-devel`
+- `libxcb-xf86dri-devel`
+- `libxcb-xf86dga-devel`
+- `libxcb-xf86misc-devel`
+- `libxcb-xf86vidmode-devel`
+- `libxcb-xf86driproto-devel`
+- `libxcb-xf86dgaproto-devel`
+- `libxcb
