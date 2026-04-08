@@ -1,0 +1,123 @@
+$ sudo apt-get install \
+   autoconf automake libtool make \
+   libreadline-dev texinfo \
+   pkg-config libpam0g-dev libjson-c-dev \
+   bison flex python3-dev python3-pip \
+   python3-setuptools libsystemd-dev \
+   libcap-dev libsnmp-dev \
+   libpcre3-dev libelf-dev
+```
+
+```
+$ git clone https://github.com/frrouting/frr.git
+$ cd frr
+$ ./bootstrap.sh
+$ ./configure \
+   --prefix=/usr \
+   --enable-exampledir=/usr/share/doc/frr/examples/ \
+   --localstatedir=/var/run/frr \
+   --sbindir=/usr/lib/frr \
+   --sysconfdir=/etc/frr \
+   --enable-multipath=64 \
+   --enable-user=frr \
+   --enable-group=frr \
+   --enable-vty-group=frrvty \
+   --enable-configfile-mask=0640 \
+   --enable-logfile-mask=0640 \
+   --enable-snmp=agentx \
+   --enable-rtadv \
+   --enable-fpm \
+   --enable-systemd=yes \
+   --enable-ospf-te \
+   --enable-ospfclient=yes \
+   --enable-tcp-zebra \
+   --enable-isis-topology \
+   --enable-isisd=yes \
+   --enable-pimd=yes \
+   --enable-ldpd=yes \
+   --enable-nhrpd=yes \
+   --enable-babeld=yes \
+   --enable-sharpd=yes \
+   --enable-vrrpd=yes \
+   --enable-eigrpd=yes \
+   --enable-bfdd=yes \
+   --enable-staticd=yes \
+   --enable-fabricd=yes \
+   --enable-vtysh \
+   --enable-watchfrr \
+   --enable-ripd=yes \
+   --enable-ripngd=yes \
+   --enable-ospfd=yes \
+   --enable-ospf6d=yes \
+   --enable-bgpd=yes \
+   --enable-isisd=yes \
+   --enable-pimd=yes \
+   --enable-ldpd=yes \
+   --enable-nhrpd=yes \
+   --enable-babeld=yes \
+   --enable-sharpd=yes \
+   --enable-vrrpd=yes \
+   --enable-eigrpd=yes \
+   --enable-bfdd=yes \
+   --enable-staticd=yes \
+   --enable-fabricd=yes \
+   --enable-ospfapi=yes \
+   --enable-ospfclient=yes \
+   --enable-tcp-zebra \
+   --enable-isis-topology \
+   --enable-rtadv \
+   --enable-fpm \
+   --enable-systemd=yes \
+   --enable-snmp=agentx \
+   --enable-configfile-mask=0640 \
+   --enable-logfile-mask=0640 \
+   --enable-user=frr \
+   --enable-group=frr \
+   --enable-vty-group=frrvty \
+   --enable-multipath=64 \
+   --enable-exampledir=/usr/share/doc/frr/examples/ \
+   --localstatedir=/var/run/frr \
+   --sbindir=/usr/lib/frr \
+   --sysconfdir=/etc/frr \
+   --with-pkg-extra-version=-MyOwnFRRVersion
+$ make
+$ make deb
+```
+
+OUTPUT:
+
+```bash
+# Dependencies
+# ---------------------
+yum update -y
+yum groupinstall -y "Development Tools"
+yum install -y git bison cmake make pkg-config python3-devel python3-pip python3-setuptools swig doxygen libssh-devel autoconf automake libtool readline-devel texinfo pam-devel json-c-devel systemd-devel libcap-devel net-snmp-devel pcre-devel elfutils-libelf-devel
+
+# Build
+# ---------------------
+git clone https://github.com/opensourcerouting/libyang-debian
+cd libyang-debian
+cp debian/libyang-cpp0.16/DEBIAN/symbols debian/libyang-cpp0.16.symbols
+dpkg-buildpackage -b -rfakeroot -us -uc
+cd ..
+cd ..
+wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/librtr/0.6.3-1/librtr_0.6.3-1.dsc
+wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/librtr/0.6.3-1/librtr_0.6.3.orig.tar.gz
+wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/librtr/0.6.3-1/librtr_0.6.3-1.debian.tar.xz
+dpkg-source -x librtr_0.6.3-1.dsc
+cd librtr-0.6.3
+dpkg-buildpackage -b -rfakeroot -us -uc
+cd ..
+git clone https://github.com/frrouting/frr.git
+cd frr
+./bootstrap.sh
+./configure --prefix=/usr --enable-exampledir=/usr/share/doc/frr/examples/ --localstatedir=/var/run/frr --sbindir=/usr/lib/frr --sysconfdir=/etc/frr --enable-multipath=64 --enable-user=frr --enable-group=frr --enable-vty-group=frrvty --enable-configfile-mask=0640 --enable-logfile-mask=0640 --enable-snmp=agentx --enable-rtadv --enable-fpm --enable-systemd=yes --enable-ospf-te --enable-ospfclient=yes --enable-tcp-zebra --enable-isis-topology --enable-isisd=yes --enable-pimd=yes --enable-ldpd=yes --enable-nhrpd=yes --enable-babeld=yes --enable-sharpd=yes --enable-vrrpd=yes --enable-eigrpd=yes --enable-bfdd=yes --enable-staticd=yes --enable-fabricd=yes --enable-vtysh --enable-watchfrr --enable-ripd=yes --enable-ripngd=yes --enable-ospfd=yes --enable-ospf6d=yes --enable-bgpd=yes --enable-isisd=yes --enable-pimd=yes --enable-ldpd=yes --enable-nhrpd=yes --enable-babeld=yes --enable-sharpd=yes --enable-vrrpd=yes --enable-eigrpd=yes --enable-bfdd=yes --enable-staticd=yes --enable-fabricd=yes --enable-ospfapi=yes --enable-ospfclient=yes --enable-tcp-zebra --enable-isis-topology --enable-rtadv --enable-fpm --enable-systemd=yes --enable-snmp=agentx --enable-configfile-mask=0640 --enable-logfile-mask=0640 --enable-user=frr --enable-group=frr --enable-vty-group=frrvty --enable-multipath=64 --enable-exampledir=/usr/share/doc/frr/examples/ --localstatedir=/var/run/frr --sbindir=/usr/lib/frr --sysconfdir=/etc/frr --with-pkg-extra-version=-MyOwnFRRVersion
+make
+make deb
+
+# References
+# ---------------------
+http://docs.frrouting.org/projects/dev-guide/en/latest/buildi
+https://github.com/opensourcerouting/libyang-debian
+https://github.com/frrouting/frr.git
+https://launchpad.net/ubuntu/+source/librtr/0.6.3-1
