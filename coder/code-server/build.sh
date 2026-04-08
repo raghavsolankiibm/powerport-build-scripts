@@ -1,3 +1,4 @@
++++++ code-server-4.23.1-linux-ppc64le.tar.gz
 # Dependencies
 # ---------------------
 yum update -y
@@ -8,15 +9,12 @@ yum install -y npm
 
 # Build
 # ---------------------
-git clone https://github.com/coder/code-server.git
-cd code-server
-npm install
-npm run build
-npm run release:linux
-./out/code-server
+curl -fsSL https://code-server.dev/install.sh | sh
+code-server
 
 # References
 # ---------------------
+https://github.com/coder/code-server
 https://github.com/coder/code-server/blob/main/install.sh
 https://coder.com/docs/code-server/latest/requirements
 https://coder.com/docs/code-server/latest/install
@@ -29,4 +27,4 @@ https://coder.com/docs/code-server/latest/FAQ
 https://coder.com/docs/code-server/latest/CONTRIBUTING
 https://coder.com/careers
 https://coder.com/careers#openings
-https://cdr.co/coder-github
+https://github.com/Microsoft/vscode
